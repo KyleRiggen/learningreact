@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>React Components</title>
+  <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+  <script type="text/babel">
+
+  var destination = document.querySelector("#container");
+
+  var HelloWorld = React.createClass({
+    render: function() {
+      return (
+        <p>Hello, {this.props.greetTarget}!</p>
+      );
+    }
+  });
+
+  var Buttonify = React.createClass({
+    render: function() {
+      return (
+        <div>
+          <button type={this.props.behavior}>{this.props.children}</button>
+        </div>
+      );
+    }
+  });
+
+  // can only have one ReactDOM.render
+  ReactDOM.render(
+    // two components being called in a single <div>
+    <div>
+      <HelloWorld greetTarget="Batman1"/>
+      <HelloWorld greetTarget="Batman2"/>
+      <HelloWorld greetTarget="Batman3"/>
+      <HelloWorld greetTarget="Batman4"/>
+      <HelloWorld greetTarget="Batman5"/>
+      <Buttonify behavior="Submit">SEND DATA</Buttonify>
+    </div>,
+    destination
+  );
+
+  </script>
+</body>
+
+</html>
