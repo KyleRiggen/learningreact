@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>React SPA</title>
+  <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  <script src="https://npmcdn.com/react-router@2.4.0/umd/ReactRouter.min.js"></script>
+
+  <style>
+
+    body {
+      background-color: #FFCC00;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1, h2, p, ul, li {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    ul.header li {
+      display: inline;
+      list-style-type: none;
+      margin: 0;
+    }
+
+    ul.header {
+      
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+
+  </div>
+
+  <script type="text/babel">
+
+  var Home = React.createClass({
+    render: function() {
+      return (
+        <div>
+          <h2>HELLO</h2>
+          <p>text  dasfkjfjaj ajfsald jalskdjfdl akjfal kjasdlk;fj adl
+          aksdjf lk;ajflka;s jalkjf al;kjf l;ajfalk jfaljf alkfj
+          aldksjf alkjfla;sk jaslkjf lkjflakj alksjfa lkjfalk; jfa;lkfj
+          akdsljf klajf lakjfal;jf alksjflkajflakjljasdlkjfalkjalkfja
+          lksdjfalkjfalskjfaslkfjaslkdfja kljsdlkajf kajd flaksjfkl.</p>
+
+          <p>antoher sentence to round it out of bull shit.</p>
+        </div>
+      )
+    }
+  });
+
+  var App = React.createClass({
+    render: function() {
+      return (
+        <div>
+          <h1>Simple SPA</h1>
+
+          <ul className="header">
+            <li>Home</li>
+            <li>Stuff</li>
+            <li>Contact</li>
+          </ul>
+
+          <div className="content">
+            <Home/>
+          </div>
+        </div>
+      )
+    }
+  });
+
+  var destination = document.querySelector("#container");
+
+
+  // can only have one ReactDOM.render
+  ReactDOM.render(
+    <ReactRouter.Router>
+      <ReactRouter.Route path="/" component={App}>
+
+      </ReactRouter.Route>
+    </ReactRouter.Router>,
+    destination
+  );
+  </script>
+</body>
+
+</html>
